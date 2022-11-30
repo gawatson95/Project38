@@ -62,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-aQ-DvI">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="16" y="59" width="361" height="158"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,10 +71,10 @@
                         <viewLayoutGuide key="safeArea" id="ZGi-iL-cxP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="centerX" secondItem="G9V-jM-SNO" secondAttribute="centerX" id="00l-am-dK3"/>
-                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="bottom" secondItem="ZGi-iL-cxP" secondAttribute="bottom" id="4It-0t-7Kk"/>
-                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="top" secondItem="ZGi-iL-cxP" secondAttribute="top" id="k04-qE-FfU"/>
-                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="leading" secondItem="ZGi-iL-cxP" secondAttribute="leading" id="zXF-pC-MqS"/>
+                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="leading" secondItem="G9V-jM-SNO" secondAttribute="leadingMargin" id="JS1-yy-qzt"/>
+                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="trailing" secondItem="G9V-jM-SNO" secondAttribute="trailingMargin" id="MGf-iz-yo1"/>
+                            <constraint firstItem="cm8-aQ-DvI" firstAttribute="top" secondItem="ZGi-iL-cxP" secondAttribute="top" id="yuv-tb-bZH"/>
+                            <constraint firstItem="ZGi-iL-cxP" firstAttribute="bottom" secondItem="cm8-aQ-DvI" secondAttribute="bottom" constant="601" id="zi3-7F-cpA"/>
                         </constraints>
                     </view>
                     <connections>
