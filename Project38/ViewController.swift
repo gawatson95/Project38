@@ -206,7 +206,13 @@ extension ViewController {
         
         var config = UIListContentConfiguration.cell()
         config.text = commit.message
-        config.secondaryText = "By \(commit.author.name) on \(commit.date.description)"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        let formattedDate = dateFormatter.string(from: commit.date)
+        
+        config.secondaryText = "By \(commit.author.name) on \(formattedDate)"
         cell.contentConfiguration = config
         return cell
     }
@@ -239,7 +245,6 @@ extension ViewController {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .delete:
-            
             if numberOfObjectsInCurrentSection > 1 {
                 tableView.deleteRows(at: [indexPath!], with: .automatic)
             } else {

@@ -20,6 +20,7 @@
 		C0A3CA60293672EE00E06DE1 /* Commit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3CA5E293672EE00E06DE1 /* Commit+CoreDataProperties.swift */; };
 		C0A3CA632936AAFF00E06DE1 /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3CA612936AAFF00E06DE1 /* Author+CoreDataClass.swift */; };
 		C0A3CA642936AAFF00E06DE1 /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A3CA622936AAFF00E06DE1 /* Author+CoreDataProperties.swift */; };
+		C0AA1EF929390BF1001BDF4E /* AuthorCommitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AA1EF829390BF1001BDF4E /* AuthorCommitTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C0A3CA5E293672EE00E06DE1 /* Commit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Commit+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		C0A3CA612936AAFF00E06DE1 /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		C0A3CA622936AAFF00E06DE1 /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		C0AA1EF829390BF1001BDF4E /* AuthorCommitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCommitTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				C0A3CA4029366BD700E06DE1 /* SceneDelegate.swift */,
 				C0A3CA4229366BD700E06DE1 /* ViewController.swift */,
 				C0A3CA5429366E4B00E06DE1 /* DetailViewController.swift */,
+				C0AA1EF829390BF1001BDF4E /* AuthorCommitTableViewController.swift */,
 				C0A3CA4429366BD700E06DE1 /* Main.storyboard */,
 				C0A3CA5629366F5A00E06DE1 /* Project38.xcdatamodeld */,
 				C0A3CA4729366BD900E06DE1 /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 				C0A3CA5829366F5A00E06DE1 /* Project38.xcdatamodeld in Sources */,
 				C0A3CA632936AAFF00E06DE1 /* Author+CoreDataClass.swift in Sources */,
 				C0A3CA60293672EE00E06DE1 /* Commit+CoreDataProperties.swift in Sources */,
+				C0AA1EF929390BF1001BDF4E /* AuthorCommitTableViewController.swift in Sources */,
 				C0A3CA642936AAFF00E06DE1 /* Author+CoreDataProperties.swift in Sources */,
 				C0A3CA5329366D0B00E06DE1 /* SwiftyJSON.swift in Sources */,
 			);

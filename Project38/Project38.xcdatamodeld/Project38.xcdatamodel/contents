@@ -3,7 +3,7 @@
     <entity name="Author" representedClassName="Author" syncable="YES">
         <attribute name="email" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="commits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Commit" inverseName="author" inverseEntity="Commit"/>
+        <relationship name="commits" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Commit" inverseName="author" inverseEntity="Commit"/>
         <fetchIndex name="byNameIndex">
             <fetchIndexElement property="name" type="Binary" order="ascending"/>
         </fetchIndex>

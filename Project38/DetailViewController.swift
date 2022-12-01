@@ -29,9 +29,15 @@ class DetailViewController: UIViewController, WKUIDelegate {
         
             detailLabel.text = detail.message
             
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Commit 1/\(detail.author.commits.count)", style: .plain, target: self, action: #selector(showAuthorCommits))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Commit 1/\(detail.author.commits.count)", style: .plain, target: self, action: #selector(showAuthorCommits))
         }
-
+    }
+    
+    @objc func showAuthorCommits() {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "AuthorCommit") as? AuthorCommitTableViewController {
+            vc.author = detailItem?.author
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
 }
