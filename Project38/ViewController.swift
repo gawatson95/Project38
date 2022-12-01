@@ -12,6 +12,7 @@ class ViewController: UITableViewController, NSFetchedResultsControllerDelegate 
     
     var container: NSPersistentContainer!
     var commitPredicate: NSPredicate?
+    var numberOfObjectsInCurrentSection: Int!
     
     var fetchedResultsController: NSFetchedResultsController<Commit>!
     
@@ -76,8 +77,22 @@ class ViewController: UITableViewController, NSFetchedResultsControllerDelegate 
         newest.fetchLimit = 1
         
         if let commits = try? container.viewContext.fetch(newest) {
-            if commits.count > 0 {
-                return formatter.string(from: commits[0].date.addingTimeInterval(1))
+            
+            let defaults = UserDefaults.standard
+            if let defaultsDate = defaults.object(forKey: "mostRecentCommit") as? Date {
+                if commits[0].date > defaultsDate {
+                    defaults.set(commits[0].date, forKey: "mostRecentCommit")
+                }
+            }
+            
+            if let date = defaults.object(forKey: "mostRecentCommit") as? Date {
+                if commits.count > 0 {
+                    return formatter.string(from: date.addingTimeInterval(1))
+                }
+            } else {
+                if commits.count > 0 {
+                    return formatter.string(from: commits[0].date.addingTimeInterval(1))
+                }
             }
         }
         
@@ -206,6 +221,11 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let commit = fetchedResultsController.object(at: indexPath)
+            
+            let sections = fetchedResultsController.sections
+            let section = sections![indexPath.section]
+            
+            numberOfObjectsInCurrentSection = section.numberOfObjects
             container.viewContext.delete(commit)
             
             saveContext()
@@ -219,7 +239,12 @@ extension ViewController {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .delete:
-            tableView.deleteRows(at: [indexPath!], with: .automatic)
+            
+            if numberOfObjectsInCurrentSection > 1 {
+                tableView.deleteRows(at: [indexPath!], with: .automatic)
+            } else {
+                tableView.deleteSections([indexPath!.section], with: .automatic)
+            }
         default:
             break
         }
